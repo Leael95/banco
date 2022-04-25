@@ -27,23 +27,31 @@ Backend:
 Base de Datos:
 Base de datos relacional
 
-- La tabla principal tendrá los siguientes campos:
--- ID
+- La tabla de login tendrá los siguientes campos:
+-- Id
 -- Usuario
--- Contraseña
 -- Mail
--- Dinero actual (Inicialmente se iniciaran con 10000$ al registrarse a la plataforma, este monto cambiara al efectuar alguna accion)
+-- Contraseña
+
+- La tabla principal tendra los siguientes campos:
+-- Id
+-- Nombre
+-- Apellido
+-- Fecha de Nacimiento
+-- Monto ARS (Inicia con $10000)
+-- Monto USD
+
+- Tabla de estado de transacciones
+-- Id
+-- Estado(Deposito, extraccion, envio, cambioUSD , cambioARS)
 
 - Tabla de historial de transacciones
 -- ID
 -- ID Usuario
 -- Estado de transacción (ID de transacciones)
 -- Importe que se depositó-extrajo-envio
+-- ID persona a la que se le envio si es que existe
 -- Si se envio el dinero nombre de la persona a la que se la envio
 -- Monto anterior antes del cambio
 -- Monto posterior despues del cambio
 -- Fecha en el que se realizo el cambio
-
-- Tabla de estado de transacciones
--- ID
--- Estado(Deposito, extraccion, envio)
