@@ -10,7 +10,7 @@ Herramientas a utilizar:
 Frontend:
 - El usuario tendra que logear para poder ingresar a su cuenta, y asi poder realizar las operaciones correspondientes.
 - El usuario al no tener cuenta, puede registrarse y asi poder formar parte del banco.
-- El usuario una vez dentro de la plataforma, tendra 4 opciones, y estas van a figurar en forma de botones grandes en el medio, y aca podra depositar, extraer, enviar dinero y ver el historial de transacciones
+- El usuario una vez dentro de la plataforma, tendra 6 opciones, y estas van a figurar en forma de botones grandes en el medio, y aca podra depositar, extraer, enviar dinero, cambiar pesos, cambiar dolares y ver el historial de transacciones.
 - En el inicio figurara el monto total de la cuenta al momento actual
 - Al realizar alguna operacion el monto del inicio cambiara
 - El historial de transaccion tendra solo las ultimas 10 operaciones, tambien se podra filtrar por operacion, hasta un maximo de 10

@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if(isset($_SESSION['userDigitalBank'])) {
+        header('Location: home.php');
+    } 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,15 +16,9 @@
     <title>Banco Digital</title>
 </head>
 <body>
-    <?php 
-        if(isset($_GET['id'])) {
-            echo "<h1 class='papita'>Bienvenido ". $_GET['id']."</h1>";
-        } else {
-            echo "Bienvenido";
-        }
-    ?>
+    <h1>Bienvenido</h1>
 
-    <form action="../backend/validations/validationLogin.php" method="GET">
+    <form action="../../backend/controllers/loginController.php" method="GET">
         <label for="user">Usuario</label>
         <input type="text" name="user" id="user">
 

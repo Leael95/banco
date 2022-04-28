@@ -7,7 +7,7 @@
     <title>Registro</title>
 </head>
 <body>
-    <form action="../backend/validations/validationRegister.php" method="POST">
+    <form action="../../backend/controllers/registerController.php" method="POST">
         <label for="user">Usuario</label>
         <input type="text" name="user" id="user"><br><br>
 
