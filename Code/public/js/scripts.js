@@ -2,7 +2,7 @@ function redirectButtons(boton) {
     const btnRedirect = document.getElementById(boton);
 
     btnRedirect.addEventListener('click',() => {
-        window.location.href = `operations.php?operation=${boton}`;
+        window.location.href = `operations.php?${boton}`;
     })
 }
 

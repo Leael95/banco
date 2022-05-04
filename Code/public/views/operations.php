@@ -7,14 +7,18 @@
     <title>Enviar</title>
 </head>
 <body>
-    <form action="../../backend/controllers/operationsController.php" method="POST">
-        <label for="amount">Monto a enviar</label>
-        <input type="number" name="money" id="money">
-
-        <label for="receiver">Destinatario</label>
-        <input type="text" name="receiver" id="receiver">
-
-        <input type="submit" name="sendAmount" value="Enviar">
-    </form>
+    <?php
+        if(isset($_GET['deposit'])) {
+            require('operationsViews/depositOperation.php');
+        } elseif(isset($_GET['extract'])){
+            require('operationsViews/extractOperation.php');
+        } elseif(isset($_GET['send'])){
+            require('operationsViews/sendOperation.php');
+        } elseif(isset($_GET['changeArs'])){
+            require('operationsViews/changeArsOperation.php');
+        } elseif(isset($_GET['changeUsd'])){
+            require('operationsViews/changeUsdOperation.php');
+        }
+    ?>
 </body>
 </html>
