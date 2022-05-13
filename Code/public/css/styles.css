@@ -1,0 +1,68 @@
+.index-body {
+    background-image: url("../img/wave\ .svg");
+    background-repeat: no-repeat;
+    background-position:bottom;
+    height: 100vh;
+}
+
+h1, h2 {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.index-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.index-img {
+    background-image: url("../img/indexphoto.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 180%;
+    height: 97vh;
+}
+
+.index-h1 {
+    font-size: 50px;
+    text-align: center;
+}
+
+.index-h2 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.index-form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-form-index {
+    border: 1px solid grey;
+    border-radius: 10px;
+    font-size: 25px;
+    height: 40px;
+    margin-bottom: 10px;
+    outline: none;
+    padding-left: 10px;
+    width: 80%;
+}
+
+.input-submit-index {
+    background-color: #7c74a4;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 10px 15px;
+}
+
+.input-submit-index:hover {
+    background-color: #847ca4;
+}
+
+.input-submit-index:active {
+    background-color: blueviolet;
+}
