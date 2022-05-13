@@ -28,5 +28,7 @@ if(mysqli_num_rows($resultUser) == 1) {
 
     $resultNewMoney = mysqli_query($conn,$queryNewMoney);
 
+    $resultTransaction = mysqli_query($conn,"INSERT INTO transactionhistory (iduser,idstatus,import,valueUsd,date) VALUES ('$userId',4,'$money','$valueUsd',2022)");
+
     header("Location: ../../public/views/home.php");
 }

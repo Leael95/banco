@@ -27,6 +27,7 @@ if(mysqli_num_rows($resultReceiver) == 2) {
 
     mysqli_query($conn,"UPDATE main SET amountArs=$userMoneySend WHERE id=$userIdSend");
     mysqli_query($conn,"UPDATE main SET amountArs=$userMoneyReceive WHERE id=$userIdReceive");
+    mysqli_query($conn,"INSERT INTO transactionhistory (iduser,idstatus,import,date,idinteracteduser) VALUES ('$userIdSend',3,'$money',2022,'$userIdReceive')");
 
     header("Location: ../../public/views/home.php");
 }
