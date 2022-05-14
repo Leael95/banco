@@ -1,34 +1,44 @@
 <?php 
 
+require("../helpers/dolar.php");
+
 $money = $_POST['money'];
 $valueUsd = $_POST['valueUsd'];
+$valueApiUsd = dolarBlue("venta");
 
 $moneyUsd = $money / $valueUsd;
 
-$user = $_SESSION['userDigitalBank'];
+$valueFormat = number_format((float)$moneyUsd,2,'.','');
 
-$queryUser = "SELECT id FROM login WHERE user='$user'";
+if($valueUsd == $valueApiUsd) {
+    $user = $_SESSION['userDigitalBank'];
 
-$resultUser = mysqli_query($conn,$queryUser);
+    $queryUser = "SELECT id FROM login WHERE user='$user'";
 
-if(mysqli_num_rows($resultUser) == 1) {
-    $data = $resultUser ->fetch_assoc();
-    $userId = $data['id'];
+    $resultUser = mysqli_query($conn,$queryUser);
 
-    $queryUserMoney = "SELECT amountARS, amountUSD FROM main WHERE id='$userId'";
+    if(mysqli_num_rows($resultUser) == 1) {
+        $data = $resultUser ->fetch_assoc();
+        $userId = $data['id'];
 
-    $resultMoney = mysqli_query($conn,$queryUserMoney);
+        $queryUserMoney = "SELECT amountARS, amountUSD FROM main WHERE id='$userId'";
 
-    $dataMoney = $resultMoney -> fetch_assoc();
-    
-    $newMoneyArs = $dataMoney['amountARS'] - $money;
-    $newMoneyUsd = $dataMoney['amountUSD'] + $moneyUsd;
+        $resultMoney = mysqli_query($conn,$queryUserMoney);
 
-    $queryNewMoney = "UPDATE main SET amountARS=$newMoneyArs,amountUSD=$newMoneyUsd WHERE id='$userId'";
+        $dataMoney = $resultMoney -> fetch_assoc();
+        
+        $newMoneyArs = $dataMoney['amountARS'] - $money;
+        $newMoneyUsd = $dataMoney['amountUSD'] + $valueFormat;
 
-    $resultNewMoney = mysqli_query($conn,$queryNewMoney);
+        $queryNewMoney = "UPDATE main SET amountARS=$newMoneyArs,amountUSD=$newMoneyUsd WHERE id='$userId'";
 
-    $resultTransaction = mysqli_query($conn,"INSERT INTO transactionhistory (iduser,idstatus,import,valueUsd,date) VALUES ('$userId',4,'$money','$valueUsd',NOW())");
+        $resultNewMoney = mysqli_query($conn,$queryNewMoney);
 
-    header("Location: ../../public/views/home.php");
+        $resultTransaction = mysqli_query($conn,"INSERT INTO transactionhistory (iduser,idstatus,import,valueUsd,date) VALUES ('$userId',4,'$money','$valueUsd',NOW())");
+
+        header("Location: ../../public/views/home.php");
 }
+} else {
+    echo "jaja que onda ocn vos que tocas";
+}
+
