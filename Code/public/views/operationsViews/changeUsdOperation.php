@@ -3,7 +3,7 @@ require('../../backend/helpers/dolar.php');
 $dolar = dolarBlue("compra");
 ?>
 
-<h2>Valor del dolar a vender: <?php echo $dolar ?> </h2>
+<h2>Valor del dolar a vender: <span id="valueUsdApi"><?php echo $dolar ?></span></h2>
 
 <form action="../../backend/controllers/operationsController.php" method="POST">
         <label for="money">Ingrese su monto a cambiar a Pesos</label>
@@ -11,5 +11,5 @@ $dolar = dolarBlue("compra");
 
         <input type="hidden" name="valueUsd" id="valueUsd" value="<?php echo $dolar ?>">
 
-        <input type="submit" name="changeUsd" value="Enviar">
+        <input type="submit" id="btnInputSubmit" name="changeUsd" value="Enviar">
 </form>

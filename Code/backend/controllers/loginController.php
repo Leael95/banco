@@ -12,10 +12,13 @@ if(isset($_GET)) {
 
     $result = mysqli_query($conn,$query);
 
+    $data = $result->fetch_assoc();
+
     $rows = mysqli_num_rows($result);
 
     if($rows == 1) {
-        $_SESSION['userDigitalBank'] = $user;
+        $_SESSION['userDigitalBank'] = $data["user"];
+        $_SESSION['idDigitalBank'] = $data["id"];
         header("Location: ../../public/views/home.php");
     } else {
         echo "Usuario incorrecto, comprobar datos";

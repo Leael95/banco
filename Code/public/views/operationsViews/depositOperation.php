@@ -2,5 +2,5 @@
         <label for="amount">Ingrese su monto</label>
         <input type="number" name="money" id="money">
 
-        <input type="submit" name="depositAmount" value="Enviar">
+        <input type="submit" id="btnInputSubmit" name="depositAmount" value="Enviar">
 </form>

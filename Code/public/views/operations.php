@@ -1,3 +1,9 @@
+<?php 
+    session_start();
+    require('../../backend/database/db.php');
+    require('../../backend/helpers/amountAccount.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +13,8 @@
     <title>Operacion</title>
 </head>
 <body>
+    <p>Monto en ARS: <span id="amountArs"><?php echo $amountArsUsd['amountArs'] ?></span></p>
+
     <?php
         if(isset($_GET['deposit'])) {
             require('operationsViews/depositOperation.php');
@@ -14,11 +22,25 @@
             require('operationsViews/extractOperation.php');
         } elseif(isset($_GET['send'])){
             require('operationsViews/sendOperation.php');
-        } elseif(isset($_GET['changeArs'])){
-            require('operationsViews/changeArsOperation.php');
-        } elseif(isset($_GET['changeUsd'])){
-            require('operationsViews/changeUsdOperation.php');
+        } else if(isset($_GET['changeArs']) || isset($_GET['changeUsd'])) {
+            echo "<p>Monto en USD: <span id='amountUsd'>".$amountArsUsd['amountUsd']."</span></p>";
+
+            if(isset($_GET['changeArs'])){
+                require('operationsViews/changeArsOperation.php');
+            } elseif(isset($_GET['changeUsd'])){
+                require('operationsViews/changeUsdOperation.php');
+            }
         }
     ?>
+
+    <p>Su monto en ARS sera: <span id="calcAmountArs"></span></p>
+    
+    <?php
+        if(isset($_GET['changeArs']) || isset($_GET['changeUsd'])) {
+            echo '<p>Su monto en USD sera: <span id="calcAmountUsd"></span></p>';
+        }
+    ?>
+
+<script src="../js/operations.js"></script>
 </body>
 </html>

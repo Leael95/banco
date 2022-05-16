@@ -5,5 +5,5 @@
         <label for="receiver">Destinatario</label>
         <input type="text" name="receiver" id="receiver">
 
-        <input type="submit" name="sendAmount" value="Enviar">
+        <input type="submit" id="btnInputSubmit" name="sendAmount" value="Enviar">
 </form>
