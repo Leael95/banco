@@ -20,7 +20,7 @@
         <div class="index-img">
 
         </div>
-        <div>
+        <div class="index-login-register">
             <h1 class="index-h1">BANCO DIGITAL</h1>
 
             <h2 class="index-h2">Iniciar sesión al Home Banking</h2>

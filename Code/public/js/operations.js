@@ -3,11 +3,13 @@ const amountUsd = document.getElementById("amountUsd");
 const money = document.getElementById("money");
 const amountToChangeArs = document.getElementById("calcAmountArs");
 const params = new URLSearchParams(window.location.search);
+const btnSubmit = document.getElementById("btnInputSubmit");
 
 function interactedAmounts() {
     const amountArsInt = Number(amountArs.textContent);
     const moneyInt = Number(money.value);
     let resultArs = null;
+    let resultUsd = null;
 
     if(params.has('deposit')) {
         resultArs = amountArsInt + moneyInt;
@@ -17,7 +19,6 @@ function interactedAmounts() {
         const usdApi = document.getElementById("valueUsdApi");
         const amountUsdInt = Number(amountUsd.textContent);
         const usdApiInt = Number(usdApi.textContent);
-        let resultUsd = null;
 
         const amountToChangeUsd = document.getElementById("calcAmountUsd");
 
@@ -38,6 +39,20 @@ function interactedAmounts() {
     }
 
     amountToChangeArs.innerHTML = resultArs;
+
+    if(params.has('changeUsd')) {
+        if(resultUsd < 0) {
+            btnSubmit.disabled = true;
+        } else {
+            btnSubmit.disabled = false;
+        }
+    } else {
+        if(resultArs < 0) {
+            btnSubmit.disabled = true;
+        } else {
+            btnSubmit.disabled = false;
+        }
+    }
 }
 
 money.addEventListener('input', interactedAmounts);
