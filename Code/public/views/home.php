@@ -26,8 +26,15 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Home Banking Banco Digital</title>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="../css/styles.css">
         </head>
+
         <body>
+            <?php require('importsViews/navbar.php') ?>
+
             <?php if(isset($_SESSION['userDigitalBank'])) {
                 echo "<h1>Bienvenido ".$_SESSION['userDigitalBank']."</h1>";
             } ?>
@@ -43,7 +50,6 @@
             <button id="changeUsd">Cambiar Dolares</button>
             <button id="transactionHistory">Historial de transacciones</button>
 
-            <a href="home.php?sDestroy">Cerrar sesion</a>
             <a href="changePw.php">Cambiar contraseña</a>
             <script src="../js/scripts.js"></script>
         </body>
