@@ -17,6 +17,6 @@ if(isset($_POST)) {
     $resultMain = mysqli_query($conn,$queryMain);
 
     if($resultLogin && $resultMain) {
-        echo "Registrado correctamente";
+        header("Location: ../../public/views/index.php?regOk");
     }
 }

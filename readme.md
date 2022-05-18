@@ -51,7 +51,4 @@ Base de datos relacional
 -- Estado de transacción (ID de transacciones)
 -- Importe que se depositó-extrajo-envio
 -- ID persona a la que se le envio si es que existe
--- Si se envio el dinero nombre de la persona a la que se la envio
--- Monto anterior antes del cambio
--- Monto posterior despues del cambio
 -- Fecha en el que se realizo el cambio

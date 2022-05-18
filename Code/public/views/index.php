@@ -35,7 +35,14 @@
 
                 <input class="input-submit-index" type="submit" value="Ingresar">
             </form>
+
+        <a href="register.php">Registrarse</a>
+
+            <p hidden id="index-error-login" class="index-error-login">ERROR AL INICIAR SESIÓN, USUARIO O CONTRASEÑA INCORRECTO</p>
+            <p hidden id="index-register" class="index-register">REGISTRADO CORRECTAMENTE, YA PUEDE INICIAR SESIÓN</p>
         </div>
     </div>
+
+    <script src="../js/index.js"></script>
 </body>
 </html>

@@ -83,6 +83,47 @@ a, a:link, a:visited, a:hover, a:active {
     background-color: blueviolet;
 }
 
+.index-error-login, .index-register {
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    margin-top: 5px;
+    padding: 2px 5px;
+    text-align: center;
+}
+
+.index-error-login {
+    background-color: red;
+}
+
+.index-register {
+    background-color: green;
+}
+
+/* __________HOME______________ */
+
+.header-home {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+}
+
+/* .header-user {
+    
+} */
+
+.header-user h1, h3 {
+    text-align: center;
+}
+
+.header-digitalbank img {
+    width: 300px;
+}
+
+.title-home {
+    text-align: center;
+}
+
 /* __________NAVBAR______________ */
 
 
@@ -117,13 +158,13 @@ a, a:link, a:visited, a:hover, a:active {
     color: #fff;
     background-color: #1A1A1A;
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-  }
+}
   
   .nav-bar-menu:active {
     background-color: #383838;
     box-shadow: none;
     transform: translateY(0);
-  }
+}
 
 /* __________MEDIAQUERYS______________ */
 @media (max-width: 600px) {

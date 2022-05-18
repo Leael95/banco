@@ -21,7 +21,7 @@ if(isset($_GET)) {
         $_SESSION['idDigitalBank'] = $data["id"];
         header("Location: ../../public/views/home.php");
     } else {
-        echo "Usuario incorrecto, comprobar datos";
+        header("Location: ../../public/views/index.php?errLogin");
     }
     
 }
