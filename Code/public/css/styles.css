@@ -166,6 +166,27 @@ a, a:link, a:visited, a:hover, a:active {
     transform: translateY(0);
 }
 
+/* __________TRANSACTION HISTORY______________ */
+
+.transactions-links-container {
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.transaction-links-pages {
+    background-color: #7c74a4;
+    border-radius: 50%;
+    font-size: 20px;
+    margin: 0 3px;
+    width: 30px;
+    text-align: center;
+}
+
+.transaction-links-pages:hover {
+    background-color: #aea1e0;
+    color: white;
+}
 /* __________MEDIAQUERYS______________ */
 @media (max-width: 600px) {
     .index-container {

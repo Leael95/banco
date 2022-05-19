@@ -58,6 +58,12 @@
         ?>
     </table>
 
+    <div class="transactions-links-container">
+        <?php
+            pages();
+        ?>
+    </div>
+
     <script src="../js/transactions.js"></script>
 </body>
 </html>
