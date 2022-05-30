@@ -187,6 +187,12 @@ a, a:link, a:visited, a:hover, a:active {
     background-color: #aea1e0;
     color: white;
 }
+
+.transaction-disabled {
+    background-color: red;
+}
+
+
 /* __________MEDIAQUERYS______________ */
 @media (max-width: 600px) {
     .index-container {

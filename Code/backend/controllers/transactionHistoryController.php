@@ -80,12 +80,12 @@ function pages() {
         }
 
         for($i = 0 ; $i < $numRows ; $i = $i + 10) {
-            echo "<a class='transaction-links-pages' href='transactionsHistory.php?$operation&offset=$i'>$numPages</a>";
+            echo "<a id='transaction-offset$i' class='transaction-links-pages' href='transactionsHistory.php?$operation&offset=$i'>$numPages</a>";
             $numPages++;
         }
     } else {
         for($i = 0 ; $i < $numRows ; $i = $i + 10) {
-            echo "<a class='transaction-links-pages' href='transactionsHistory.php?offset=$i'>$numPages</a>";
+            echo "<a id='transaction-offset$i' class='transaction-links-pages' href='transactionsHistory.php?offset=$i'>$numPages</a>";
             $numPages++;
         }
     }
